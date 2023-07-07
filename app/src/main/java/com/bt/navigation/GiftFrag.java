@@ -64,7 +64,7 @@ public class GiftFrag extends Fragment {
         fm.setFragmentResultListener("keyMain", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                String str = result.getString("Name");
+                String str = result.getString("name");
                 tvName.setText("Hello " + str);
             }
         });

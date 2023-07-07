@@ -74,7 +74,7 @@ public class ShopFrag extends Fragment {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
-                bundle.putString("Name", edtName.getText().toString());
+                bundle.putString("name", edtName.getText().toString());
                 FragmentManager fm = getParentFragmentManager();
                 fm.setFragmentResult("keyMain", bundle);
             }
