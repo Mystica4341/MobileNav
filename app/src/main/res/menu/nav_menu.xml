@@ -2,11 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/shop"
-        android:title="Item" />
+        android:icon="@drawable/baseline_house_24"
+        android:title="Shop" />
     <item android:id="@+id/cart"
-        android:title="Item" />
+        android:icon="@drawable/baseline_shopping_cart_24"
+        android:title="Cart" />
     <item android:id="@+id/gift"
-        android:title="Item" />
+        android:icon="@drawable/baseline_card_giftcard_24"
+        android:title="Gift" />
     <item android:id="@+id/profile"
-        android:title="Item" />
+        android:icon="@drawable/baseline_person_24"
+        android:title="Profile" />
 </menu>
