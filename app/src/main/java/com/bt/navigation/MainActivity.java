@@ -34,8 +34,11 @@ public class MainActivity extends AppCompatActivity {
                 if (id == R.id.shop){
                     actionBar.setTitle("Shop");
                     loadFragment(new ShopFrag());
+                    return true;
                 } else if (id == R.id.gift) {
+                    actionBar.setTitle("Gift");
                     loadFragment(new GiftFrag());
+                    return true;
                 } else if (id == R.id.cart) {
                     
                 } else if (id == R.id.profile) {
