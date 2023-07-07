@@ -2,6 +2,9 @@ package com.bt.navigation;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -38,5 +41,13 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void loadFragment(Fragment fragment){
+        FragmentManager fm = getSupportFragmentManager();
+        //đẩy fragment tương ứng lên
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.frameFrag, fragment);
+        ft.commit();
     }
 }
