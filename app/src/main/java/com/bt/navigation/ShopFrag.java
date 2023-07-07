@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,8 +73,10 @@ public class ShopFrag extends Fragment {
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.putExtra("Name", edtName.getText().toString());
+                Bundle bundle = new Bundle();
+                bundle.putString("Name", edtName.getText().toString());
+                FragmentManager fm = getParentFragmentManager();
+                fm.setFragmentResult("keyMain", bundle);
             }
         });
         return view;

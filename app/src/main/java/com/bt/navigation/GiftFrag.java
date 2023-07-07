@@ -3,7 +3,10 @@ package com.bt.navigation;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentResultListener;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,6 +60,14 @@ public class GiftFrag extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        FragmentManager fm = getChildFragmentManager();
+        fm.setFragmentResultListener("keyMain", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                String str = result.getString("Name");
+                tvName.setText("Hello " + Name);
+            }
+        });
     }
 
     @Override
@@ -65,9 +76,7 @@ public class GiftFrag extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_gift, container, false);
         tvName = (TextView) view.findViewById(R.id.tvGift);
-        Intent intent = new Intent();
-        String Name = intent.getStringExtra("Name");
-        tvName.setText("Hello " + Name);
+
         return view;
     }
 }
