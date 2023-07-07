@@ -40,9 +40,13 @@ public class MainActivity extends AppCompatActivity {
                     loadFragment(new GiftFrag());
                     return true;
                 } else if (id == R.id.cart) {
-                    
+                    actionBar.setTitle("Cart");
+                    loadFragment(new CartFrag());
+                    return true;
                 } else if (id == R.id.profile) {
-                    
+                    actionBar.setTitle("Profile");
+                    loadFragment(new ProfileFrag());
+                    return true;
                 }
                 return false;
             }
